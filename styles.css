@@ -1,316 +1,227 @@
-/ Estilos generales /
+/* Estilos generales */
 html {
---s: 37px; / control the size /
---c1: #ff71ce;
---c2: #01cdfe;
---c3: #b967ff;
---g: var(--c3) 0 120deg,#0000 0;
-background: conic-gradient(from -60deg at 50% calc(100%/3),var(--g)),
-conic-gradient(from 120deg at 50% calc(200%/3),var(--g)),
-conic-gradient(from 60deg at calc(200%/3),var(--c3) 60deg,var(--c2) 0 120deg,#0000 0),
-conic-gradient(from 180deg at calc(100%/3),var(--c1) 60deg,var(--g)),
-linear-gradient(90deg,var(--c1) calc(100%/6), var(--c2) 0 50%, var(--c1) 0 calc(500%/6),var(--c2) 0);
-background-size: calc(1.732var(--s)) var(--s);
+    --s: 37px; /* control del tamaño */
+    --c1: #ff71ce; /* color principal */
+    --c2: #01cdfe; /* color secundario */
+    --c3: #b967ff; /* color terciario */
+    --c4: #ffcc00; /* color cuarto */
+    --c5: #00ffcc; /* color quinto */
+    --c6: #ff007f; /* color sexto */
+    --g: var(--c3) 0 120deg, #0000 0; /* gradiente */
+    background: linear-gradient(135deg, #1f1f35, #15152a); /* fondo degradado */
+    background-size: cover; /* cubrir todo el fondo */
 }
+
 :root {
---bg-color: #1a1a2e;
---shadow-color: #10101d;
---light-shadow: #2a2a4e;
---text-color: #fff;
---accent-color: #ff71ce;
---secondary-color: #01cdfe;
---tertiary-color: #b967ff;
---glow-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color), 0 0 30px var(--accent-color);
+    --bg-color: rgba(26, 26, 46, 0.9); /* color de fondo con opacidad */
+    --shadow-color: rgba(0, 0, 0, 0.2); /* color de sombra */
+    --light-shadow: rgba(255, 255, 255, 0.1); /* sombra clara */
+    --text-color: #fff; /* color del texto */
+    --accent-color: #ff71ce; /* color de acento */
+    --secondary-color: #01cdfe; /* color secundario */
+    --tertiary-color: #b967ff; /* color terciario */
+    --glow-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color), 0 0 30px var(--accent-color); /* sombra resplandeciente */
 }
-/ Estilos de contenedor y encabezado /
+
+/* Estilos de contenedor y encabezado */
 body {
-font-family: 'Poppins', sans-serif;
-background-color: transparent;
-color: var(--text-color);
-line-height: 1.6;
-padding: 2rem;
+    font-family: 'Roboto', sans-serif; /* fuente principal */
+    background-color: var(--bg-color); /* color de fondo */
+    color: var(--text-color); /* color del texto */
+    line-height: 1.6; /* altura de línea */
+    padding: 2rem; /* relleno */
 }
+
 .container {
-max-width: 1200px;
-margin: 0 auto;
-padding: 1rem;
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 1.5rem;
+    max-width: 1200px; /* ancho máximo */
+    margin: 0 auto; /* centrado */
+    padding: 1rem; /* relleno */
+    display: grid; /* diseño de cuadrícula */
+    grid-template-columns: 1fr; /* una columna */
+    gap: 1.5rem; /* espacio entre elementos */
 }
-.header {
-min-height: var(--header-height);
-display: flex;
-flex-direction: column;
-justify-content: center;
-padding: 3rem;
-background: linear-gradient(145deg, #1f1f35, #15152a);
-}
-/ Estilos neumórficos /
+
+/* Estilos neumórficos */
 .neumorphic {
-background: rgba(31, 31, 53, 0.8);
-backdrop-filter: blur(10px);
-border: 1px solid rgba(255, 255, 255, 0.1);
-box-shadow: 5px 5px 15px var(--shadow-color),
--5px -5px 15px var(--light-shadow),
-inset 0 0 20px rgba(255, 255, 255, 0.05);
-padding: 2.5rem;
-margin: 0;
-transition: all 0.4s ease;
-position: relative;
-overflow: hidden;
+    background: rgba(31, 31, 53, 0.8); /* fondo neumórfico */
+    backdrop-filter: blur(10px); /* desenfoque de fondo */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* borde */
+    box-shadow: 5px 5px 15px var(--shadow-color),
+                -5px -5px 15px var(--light-shadow),
+                inset 0 0 20px rgba(255, 255, 255, 0.05); /* sombras */
+    padding: 2.5rem; /* relleno */
+    margin: 0; /* margen */
+    transition: all 0.4s ease; /* transición suave */
+    border-radius: 15px; /* bordes redondeados */
 }
-/ Efectos de hover /
+
+/* Estilos para las secciones */
+.section-title {
+    font-size: 1.5rem; /* tamaño de fuente */
+    margin-bottom: 1rem; /* margen inferior */
+    color: var(--c1); /* color del título */
+}
+
+/* Estilos para las tarjetas de proyectos */
+.project-card {
+    background: rgba(255, 255, 255, 0.1); /* fondo de tarjeta */
+    border-radius: 15px; /* bordes redondeados */
+    padding: 1.5rem; /* relleno */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* sombra */
+    transition: transform 0.3s, box-shadow 0.3s; /* transición suave */
+    cursor: pointer; /* cursor de puntero */
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* efecto de elevación */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* sombra más intensa */
+}
+
+/* Estilos para las listas de habilidades */
+.skill-list {
+    list-style: none; /* sin viñetas */
+    padding: 0; /* sin relleno */
+}
+
+.skill-item {
+    display: inline-block; /* bloque en línea */
+    padding: 1rem 2rem; /* relleno */
+    font-weight: 500; /* peso de fuente */
+    letter-spacing: 0.5px; /* espaciado de letras */
+    background: linear-gradient(45deg, var(--accent-color), var(--secondary-color)); /* fondo degradado */
+    border: none; /* sin borde */
+    border-radius: 30px; /* bordes redondeados */
+    color: white; /* color del texto */
+    cursor: pointer; /* cursor de puntero */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* transición suave */
+}
+
 .skill-item:hover {
-transform: translateY(-5px) scale(1.05);
-box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transform: translateY(-5px) scale(1.05); /* efecto de elevación */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* sombra al pasar el mouse */
 }
-.download-btn {
-display: inline-block;
-padding: 1.2rem 2.5rem;
-font-weight: 500;
-letter-spacing: 0.5px;
-background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
-border: 1px solid rgba(255, 255, 255, 0.2);
-box-shadow: 0 0 15px var(--accent-color);
-text-shadow: 0 0 5px var(--accent-color);
-border-radius: 30px;
-transition: all 0.3s ease;
-margin-top: 2rem;
+
+/* Estilos para la barra de navegación */
+.navbar {
+    position: fixed; /* Fija la barra en la parte superior */
+    top: 0; /* Posición en la parte superior */
+    left: 0; /* Alineación a la izquierda */
+    right: 0; /* Alineación a la derecha */
+    background: rgba(31, 31, 53, 0.8); /* Fondo semitransparente */
+    backdrop-filter: blur(10px); /* Desenfoque de fondo */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    padding: 1rem; /* Relleno */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
 }
-.download-btn:hover {
-transform: scale(0.95);
+
+.navbar ul {
+    list-style: none; /* Sin viñetas */
+    padding: 0; /* Sin relleno */
+    display: flex; /* Diseño flexible */
+    justify-content: center; /* Centrando los elementos */
 }
-/ Estilos para el botón de desplazamiento /
-.scroll-top-btn {
-position: fixed;
-bottom: 20px;
-right: 20px;
-width: 50px;
-height: 50px;
-border-radius: 50%;
-background: var(--accent-color);
-color: white;
-border: none;
-cursor: pointer;
-opacity: 0;
-transition: opacity 0.3s, transform 0.3s;
-z-index: 1000;
-box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+
+.navbar li {
+    margin: 0 1rem; /* Margen entre elementos */
 }
-.scroll-top-btn.visible {
-opacity: 1;
+
+.navbar a {
+    text-decoration: none; /* Sin subrayado */
+    color: var(--text-color); /* Color del texto */
+    font-weight: bold; /* Negrita */
+    padding: 0.5rem 1rem; /* Relleno */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
 }
-.scroll-top-btn:hover {
-transform: translateY(-5px);
-}/ Estilos generales /
-html {
---s: 37px; / control the size /
---c1: #ff71ce;
---c2: #01cdfe;
---c3: #b967ff;
---g: var(--c3) 0 120deg,#0000 0;
-background: conic-gradient(from -60deg at 50% calc(100%/3),var(--g)),
-conic-gradient(from 120deg at 50% calc(200%/3),var(--g)),
-conic-gradient(from 60deg at calc(200%/3),var(--c3) 60deg,var(--c2) 0 120deg,#0000 0),
-conic-gradient(from 180deg at calc(100%/3),var(--c1) 60deg,var(--g)),
-linear-gradient(90deg,var(--c1) calc(100%/6), var(--c2) 0 50%, var(--c1) 0 calc(500%/6),var(--c2) 0);
-background-size: calc(1.732var(--s)) var(--s);
+
+.navbar a:hover {
+    background-color: var(--c1); /* Color de fondo al pasar el mouse */
+    color: white; /* Color del texto al pasar el mouse */
 }
-:root {
---bg-color: #1a1a2e;
---shadow-color: #10101d;
---light-shadow: #2a2a4e;
---text-color: #fff;
---accent-color: #ff71ce;
---secondary-color: #01cdfe;
---tertiary-color: #b967ff;
---glow-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color), 0 0 30px var(--accent-color);
+
+/* Estilo para el enlace activo */
+.navbar a.active {
+    background-color: var(--c2); /* Color de fondo para el enlace activo */
+    color: white; /* Color del texto para el enlace activo */
 }
-/ Estilos de contenedor y encabezado /
-body {
-font-family: 'Poppins', sans-serif;
-background-color: transparent;
-color: var(--text-color);
-line-height: 1.6;
-padding: 2rem;
+
+/* Estilos para la sección de testimonios */
+.testimonials {
+    background: rgba(255, 255, 255, 0.1); /* fondo de tarjeta */
+    border-radius: 15px; /* bordes redondeados */
+    padding: 1.5rem; /* relleno */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* sombra */
+    margin: 1.5rem 0; /* margen */
 }
-.container {
-max-width: 1200px;
-margin: 0 auto;
-padding: 1rem;
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 1.5rem;
+
+/* Estilos para el formulario de contacto */
+form {
+    display: flex; /* diseño flexible */
+    flex-direction: column; /* dirección de columna */
 }
-.header {
-min-height: var(--header-height);
-display: flex;
-flex-direction: column;
-justify-content: center;
-padding: 3rem;
-background: linear-gradient(145deg, #1f1f35, #15152a);
+
+.form-group {
+    margin-bottom: 1rem; /* margen inferior */
 }
-/ Estilos neumórficos /
-.neumorphic {
-background: rgba(31, 31, 53, 0.8);
-backdrop-filter: blur(10px);
-border: 1px solid rgba(255, 255, 255, 0.1);
-box-shadow: 5px 5px 15px var(--shadow-color),
--5px -5px 15px var(--light-shadow),
-inset 0 0 20px rgba(255, 255, 255, 0.05);
-padding: 2.5rem;
-margin: 0;
-transition: all 0.4s ease;
-position: relative;
-overflow: hidden;
+
+label {
+    margin-bottom: 0.5rem; /* margen inferior */
+    font-weight: bold; /* negrita */
 }
-/ Efectos de hover /
-.skill-item:hover {
-transform: translateY(-5px) scale(1.05);
-box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+
+input, textarea {
+    padding: 0.5rem; /* relleno */
+    border-radius: 5px; /* bordes redondeados */
+    border: 1px solid #ccc; /* borde */
+    width: 100%; /* ancho completo */
 }
-.download-btn {
-display: inline-block;
-padding: 1.2rem 2.5rem;
-font-weight: 500;
-letter-spacing: 0.5px;
-background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
-border: 1px solid rgba(255, 255, 255, 0.2);
-box-shadow: 0 0 15px var(--accent-color);
-text-shadow: 0 0 5px var(--accent-color);
-border-radius: 30px;
-transition: all 0.3s ease;
-margin-top: 2rem;
+
+.submit-btn {
+    background-color: var(--c1); /* color de fondo */
+    color: white; /* color del texto */
+    border: none; /* sin borde */
+    padding: 0.75rem; /* relleno */
+    border-radius: 5px; /* bordes redondeados */
+    cursor: pointer; /* cursor de puntero */
+    transition: background-color 0.3s; /* transición suave */
 }
-.download-btn:hover {
-transform: scale(0.95);
+
+.submit-btn:hover {
+    background-color: var(--c2); /* color al pasar el mouse */
 }
-/ Estilos para el botón de desplazamiento /
-.scroll-top-btn {
-position: fixed;
-bottom: 20px;
-right: 20px;
-width: 50px;
-height: 50px;
-border-radius: 50%;
-background: var(--accent-color);
-color: white;
-border: none;
-cursor: pointer;
-opacity: 0;
-transition: opacity 0.3s, transform 0.3s;
-z-index: 1000;
-box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Ocultar por defecto */
+    position: fixed; /* Fijo en la pantalla */
+    z-index: 1000; /* Por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    overflow: auto; /* Habilitar desplazamiento si es necesario */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
 }
-.scroll-top-btn.visible {
-opacity: 1;
+
+.modal-content {
+    background-color: #fefefe; /* Fondo blanco */
+    margin: 15% auto; /* Margen superior e inferior */
+    padding: 20px; /* Relleno */
+    border: 1px solid #888; /* Borde */
+    width: 80%; /* Ancho del modal */
+    border-radius: 10px; /* Bordes redondeados */
 }
-.scroll-top-btn:hover {
-transform: translateY(-5px);
-}/ Estilos generales /
-html {
---s: 37px; / control the size /
---c1: #ff71ce;
---c2: #01cdfe;
---c3: #b967ff;
---g: var(--c3) 0 120deg,#0000 0;
-background: conic-gradient(from -60deg at 50% calc(100%/3),var(--g)),
-conic-gradient(from 120deg at 50% calc(200%/3),var(--g)),
-conic-gradient(from 60deg at calc(200%/3),var(--c3) 60deg,var(--c2) 0 120deg,#0000 0),
-conic-gradient(from 180deg at calc(100%/3),var(--c1) 60deg,var(--g)),
-linear-gradient(90deg,var(--c1) calc(100%/6), var(--c2) 0 50%, var(--c1) 0 calc(500%/6),var(--c2) 0);
-background-size: calc(1.732var(--s)) var(--s);
+
+.close {
+    color: #aaa; /* Color del botón de cerrar */
+    float: right; /* Alinear a la derecha */
+    font-size: 28px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
 }
-:root {
---bg-color: #1a1a2e;
---shadow-color: #10101d;
---light-shadow: #2a2a4e;
---text-color: #fff;
---accent-color: #ff71ce;
---secondary-color: #01cdfe;
---tertiary-color: #b967ff;
---glow-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color), 0 0 30px var(--accent-color);
-}
-/ Estilos de contenedor y encabezado /
-body {
-font-family: 'Poppins', sans-serif;
-background-color: transparent;
-color: var(--text-color);
-line-height: 1.6;
-padding: 2rem;
-}
-.container {
-max-width: 1200px;
-margin: 0 auto;
-padding: 1rem;
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 1.5rem;
-}
-.header {
-min-height: var(--header-height);
-display: flex;
-flex-direction: column;
-justify-content: center;
-padding: 3rem;
-background: linear-gradient(145deg, #1f1f35, #15152a);
-}
-/ Estilos neumórficos /
-.neumorphic {
-background: rgba(31, 31, 53, 0.8);
-backdrop-filter: blur(10px);
-border: 1px solid rgba(255, 255, 255, 0.1);
-box-shadow: 5px 5px 15px var(--shadow-color),
--5px -5px 15px var(--light-shadow),
-inset 0 0 20px rgba(255, 255, 255, 0.05);
-padding: 2.5rem;
-margin: 0;
-transition: all 0.4s ease;
-position: relative;
-overflow: hidden;
-}
-/ Efectos de hover /
-.skill-item:hover {
-transform: translateY(-5px) scale(1.05);
-box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-.download-btn {
-display: inline-block;
-padding: 1.2rem 2.5rem;
-font-weight: 500;
-letter-spacing: 0.5px;
-background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
-border: 1px solid rgba(255, 255, 255, 0.2);
-box-shadow: 0 0 15px var(--accent-color);
-text-shadow: 0 0 5px var(--accent-color);
-border-radius: 30px;
-transition: all 0.3s ease;
-margin-top: 2rem;
-}
-.download-btn:hover {
-transform: scale(0.95);
-}
-/ Estilos para el botón de desplazamiento /
-.scroll-top-btn {
-position: fixed;
-bottom: 20px;
-right: 20px;
-width: 50px;
-height: 50px;
-border-radius: 50%;
-background: var(--accent-color);
-color: white;
-border: none;
-cursor: pointer;
-opacity: 0;
-transition: opacity 0.3s, transform 0.3s;
-z-index: 1000;
-box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-}
-.scroll-top-btn.visible {
-opacity: 1;
-}
-.scroll-top-btn:hover {
-transform: translateY(-5px);
+
+.close:hover,
+.close:focus {
+    color: black; /* Color al pasar el mouse */
+    text-decoration: none; /* Sin subrayado */
+    cursor: pointer; /* Cursor de puntero */
 }
