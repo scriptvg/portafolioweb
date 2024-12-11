@@ -74,10 +74,6 @@ Soy una persona apasionada por el marketing y el desarrollo front-end, con grand
 Un portafolio profesional que destaca mis habilidades y proyectos en desarrollo front-end.  
 [Portafolio Web](https://silver-empanada-7397cc.netlify.app/)
 
-### Proyecto de Aplicación Web - Stunning Pika
-Un proyecto web creado para demostrar habilidades en desarrollo front-end, diseño responsivo y experiencia de usuario.  
-[Proyecto Web](https://stunning-pika-kr0mmsoluti0n.netlify.app/)
-
 ### Aplicación POS - Gestión Integral para Negocios
 Un punto de venta completo diseñado para facilitar la gestión comercial en Costa Rica, con integración directa a facturación electrónica de Hacienda. Este proyecto está construido utilizando React.js y Tailwind CSS para ofrecer una interfaz intuitiva y eficiente.  
 **Funcionalidades clave incluyen:**
@@ -86,7 +82,8 @@ Un punto de venta completo diseñado para facilitar la gestión comercial en Cos
 - Módulo de proveedores y clientes
 - Control de roles de usuario y seguridad  
 
-**[Repositorio GitHub - Ver código](https://github.com/scriptvg/Discord-S0ftw)**
+**![Repositorio GitHub - Ver código](https://github.com/scriptvg/Discord-S0ftw)**
+**![Proyecto Web](https://stunning-pika-kr0mmsoluti0n.netlify.app/)**
 
 ---
 
