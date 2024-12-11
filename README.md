@@ -83,6 +83,7 @@ Un punto de venta completo diseñado para facilitar la gestión comercial en Cos
 - Control de roles de usuario y seguridad  
 
 **[Repositorio GitHub - Ver código](https://github.com/scriptvg/Discord-S0ftw)**
+
 **[Proyecto Web](https://stunning-pika-kr0mmsoluti0n.netlify.app/)**
 
 ---
